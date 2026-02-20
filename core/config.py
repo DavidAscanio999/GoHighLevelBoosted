@@ -11,5 +11,6 @@ class Settings:
     VERSION_GHL = os.getenv("VERSION")
     GHL_AUTH = os.getenv("AUTH")
     GHL_URL = os.getenv("BASE_URL")
+    ID_LOCATION = os.getenv("LOCATION")
 
 settings = Settings()

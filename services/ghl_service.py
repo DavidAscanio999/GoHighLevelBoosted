@@ -10,10 +10,9 @@ class GHLService:
             "Content-Type": "application/json",
             "Version":"2021-07-28"
         }
-        
         async with httpx.AsyncClient() as client:
             response = await client.get(
-                f"{settings.GHL_URL}",
+                f"{settings.GHL_URL}/users/?locationId={settings.ID_LOCATION}",
                 headers=headers
             )
 
