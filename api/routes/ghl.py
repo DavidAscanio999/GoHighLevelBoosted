@@ -12,3 +12,10 @@ async def get_account():
         return await GHLService.get_account_info()
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+@router.get("/contactos")
+async def get_contacts():
+    try:
+        return await GHLService.get_contacts()
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))

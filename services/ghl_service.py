@@ -18,3 +18,18 @@ class GHLService:
 
         response.raise_for_status()
         return response.json()
+    
+    async def get_contacts():
+        headers = {
+            "Authorization":f"Bearer {settings.GHL_AUTH}",
+            "Content-Type": "application/json",
+            "Version":"2021-07-28"
+        }
+        async with httpx.AsyncClient() as client:
+            response = await client.get(
+                f"{settings.GHL_URL}/contacts/?locationId={settings.ID_LOCATION}",
+                headers=headers
+            )
+        response.raise_for_status()
+        return response.json()
+    
